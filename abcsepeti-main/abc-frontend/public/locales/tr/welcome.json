@@ -1,0 +1,442 @@
+{
+  "language": "Dil",
+  "title": "Hello React",
+  "content": {
+    "textOne": "Welcome at our place.",
+    "textTwo": "Welcome at <1>our place</1>."
+  },
+  "home": {
+    "search": "Arama",
+    "categories": "Kategoriler",
+    "title": {
+      "latest": {
+        "products": "Son Ürünler"
+      }
+    }
+  },
+  "cart": {
+    "title": {
+      "shopping": {
+        "cart": "Alışveriş Kartı "
+      }
+    },
+    "your": {
+      "cart": {
+        "is": {
+          "empty": "Kartınız Boş"
+        }
+      }
+    },
+    "go": {
+      "back": "Geri Git"
+    },
+    "add": {
+      "more": {
+        "book": "Daha Fazla Kitap Ekleyiniz"
+      }
+    },
+    "proceed": {
+      "to": {
+        "checkout": " Devam et"
+      }
+    }
+  },
+  "header": {
+    "menu": "Anasayfa",
+    "profile": "Profil",
+    "logout": "Çıkış Yap",
+    "sign": {
+      "in": "Giriş Yap"
+    },
+    "users": "Kullanıcılar",
+    "products": "Ürünler",
+    "orders": "Siparişler",
+    "category": "Kategori"
+  },
+  "categoryCreate": {
+    "go": {
+      "back": "Geri Dön"
+    },
+    "create": {
+      "category": "Kategori Oluştur"
+    },
+    "parent": {
+      "category": "Parent kategori"
+    },
+    "select": {
+      "parent": {
+        "category": "Parent Kategori Seç "
+      }
+    },
+
+    "description": "Tanım",
+    "enter": {
+      "description": "Description gir",
+      "name": "İsim Gir "
+    },
+    "name": "İsim"
+  },
+  "categoryEdit": {
+    "edit": {
+      "category": "Kategori Düzeltme"
+    },
+    "category": "Kategori",
+    "select": {
+      "category": "Kategori Seç"
+    },
+    "name": "İsim",
+
+    "description": "Tanım",
+    "enter": {
+      "description": "Tanım Gir",
+      "name": "İsim Gir"
+    },
+    "update": "Güncelle",
+    "go": {
+      "back": "Geri Dön"
+    }
+  },
+  "categoryList": {
+    "categories": "Kategoriler",
+    "create": {
+      "category": "Kategori Oluştur"
+    },
+    "id": "Id",
+    "parent": {
+      "id": "Parent Id"
+    },
+    "category": {
+      "name": "Kategori Adı"
+    },
+    "description": "Tanım",
+    "actions": "Hareketler"
+  },
+  "usersList": {
+    "users": "Kullanıcılar",
+    "userName": "İsim",
+    "id": "Id",
+    "first": {
+      "name": " Takma isim"
+    },
+    "last": {
+      "name": "Soyadın"
+    },
+    "email": "Email",
+    "roles": "Görevler"
+  },
+  "userEdit": {
+    "go": {
+      "back": "Geri Dön"
+    },
+    "edit": {
+      "user": "Kullanıcıyı Düzenle"
+    },
+    "first": {
+      "name": " Takma isim"
+    },
+    "last": {
+      "name": "Soyadı"
+    },
+    "email": {
+      "address": "Email Adresi"
+    },
+    "update": "Güncelle",
+    "enter": {
+      "first": {
+        "name": "Takma İsim Gir"
+      },
+      "last": {
+        "name": " Soyisim Gir"
+      },
+      "email": "Email Gir"
+    }
+  },
+  "productScreen": {
+    "select": "Seçim",
+    "poor": "kotu",
+    "fair": "yani",
+    "good": "iyi",
+    "very": {
+      "good": "cok iyi"
+    },
+    "excellent": "müthiş",
+    "price": "Fiyat",
+    "description": "Tanım",
+    "status": "Durum",
+    "submit": "Gönder",
+    "qty": "Miktar",
+    "please": "Lütfen",
+    "reviews": "Yorumlar",
+    "review": "yorum",
+    "go": {
+      "back": "Geri Dön"
+    },
+    "add": {
+      "to": {
+        "cart": "kart ekle"
+      }
+    },
+    "write": {
+      "costumer": {
+        "review": "Müşterinin yorumunu yaz"
+      },
+      "review": "yorum yapmak icin"
+    },
+    "sign": {
+      "in": "giriş yap"
+    },
+    "no": {
+      "reviews": "yorum yok"
+    }
+  },
+  "productCreate": {
+    "go": {
+      "back": "Geri Dön"
+    },
+    "create": {
+      "product": "Ürün OLşturma"
+    },
+    "name": "İsim",
+    "enter": {
+      "name": "İsim Gir",
+      "price": "Fiyat Gir",
+      "countInStock": "Stok Sayısı Gir",
+      "description": "Tanımını Giriniz "
+    },
+    "price": "Fiyat",
+    "count": {
+      "in": {
+        "stock": "Stok Sayısı Girin"
+      }
+    },
+    "description": "Tanım",
+    "product": {
+      "category": "Ürün Kategorisi"
+    },
+    "select": {
+      "product": {
+        "category": "Ürün Kategorisi Seç"
+      }
+    }
+  },
+  "productList": {
+    "products": "Ürünler",
+    "create": {
+      "product": "Ürün Oluştur"
+    },
+    "id": "Id",
+    "name": "İsim",
+    "price": "Fiyat",
+    "category": "Kategori",
+    "imageId": "ResimId",
+    "available": {
+      "item": {
+        "count": "Mevcut Ürün Sayısı"
+      }
+    },
+    "actions": "Hareketler"
+  },
+  "productEdit": {
+    "go": {
+      "back": "Geri Dön"
+    },
+    "edit": {
+      "product": "Ürünleri Düzenle"
+    },
+    "name": "İsim",
+    "price": "Fiyat",
+    "description": "Tanım",
+    "enter":{
+      "name": "İsim Gir",
+      "price": "Fiyat Gir",
+      "countInStock": "CountInStock Gir",
+      "description": "Tanım"
+    },
+    "count": {
+      "in": {
+        "stock": "Stok Sayısı"
+      }
+    }
+  },
+  "orderScreen": {
+    "items": "Parçalar",
+    "order": "Sipariş",
+    "shipping": "Kargoda",
+    "name": "İsim",
+    "email": "Email",
+    "address": "Adres",
+    "method": "şekil",
+    "tax": "Vergi",
+    "total": "Toplam",
+    "not": {
+      "delivered": " kargoya verilmedi",
+      "paid": "Ödeme Yapılmadı"
+    },
+    "payment": {
+      "method": "Ödeme Şekli",
+      "receipt": "Ödeme Makbuzu"
+    },
+    "order":{
+      "item": "şipariş edilenler",
+      "is": {
+        "empty": "Şipariş edilen yok"
+      },
+      "summary": "Toplam Sipariş"
+    },
+    "mark": {
+      "as": {
+        "delivered": "teslim edildi olarak işaretle"
+      }
+    }
+  },
+  "orderList": {
+    "orders": "siparişler",
+    "id": "Id",
+    "date": "Tarih",
+    "total": "Toplam",
+    "paid": "Ödendi",
+    "delivered": "Teslim Edildi",
+    "details": "Detaylar"
+  },
+  "loginScreen": {
+    "password": "Şifre",
+    "register": "Kayıt ol",
+    "sign": {
+      "in": "Giriş Yap"
+    },
+    "email": {
+      "address": "Email adresi"
+    },
+    "username": {
+      "or": {
+        "email": "kullanıcı adı yada email "
+      }
+    },
+    "new": {
+      "costumer": "yeni muşteri"
+    }
+  },
+  "profileScreen": {
+    "id": "Id",
+    "date": "Tarih",
+    "total": "Toplam",
+    "paid": "Ödendi",
+    "delivered": "kargoya verildi",
+    "details": "detaylar",
+    "profile": {
+     "user": "kişinin profili",
+      "update": "profili guncelle"
+    },
+    "first":{
+      "name": "ilk isim"
+    },
+    "last": {
+      "name": "soyisim"
+    },
+    "email": {
+      "address": "email adresi"
+    },
+    "password": "Şifre",
+    "update": "Güncelle",
+    "enter": {
+      "first": {
+        "name": "ilk ismini gir"
+      },
+      "last": {
+        "name": "soyisim gir"
+      },
+      "email": {
+        "address": "email adresi gir"
+      },
+      "password": "Şifre"
+    },
+    "confirm": {
+      "password": "Şifreyi onayla"
+    },
+    "myOrders": "Siparişlerim"
+  },
+  "registerScreen": {
+    "sign": {
+      "in": "Giriş Yap"
+    },
+    "username": "kullanıcı adı",
+    "email": "email",
+    "first": {
+      "name": "ilk ismini gir"
+    },
+    "password": "Şifre",
+    "confirm": {
+      "password": "Şifreyi onayla"
+    },
+    "register": "kaydet",
+    "haveAAccount": "hesabın varmı?",
+    "login": "Giriş yapıldı"
+  },
+  "shippingScreen": {
+    "address": "Adres",
+    "select": {
+      "billing": {
+        "address": "fatura adresini seçin",
+        "countryCode": "Ülke Kodu Seçiniz"
+      },
+      "shipping": {
+        "address": "kargonun adresi seç"
+      }
+    },
+    "addANewAddress": "Yeni Adres Ekle",
+    "addressLine1": "1.adres",
+    "addressLine2": "2.adres",
+    "enter": {
+      "addressLine1": "1.adresi girin",
+      "addressLine2": "2.adresi girin",
+      "city": "Şehir girin",
+      "state": "Durum girin",
+      "postalCode": "postal kodu giriniz",
+      "phoneNumber": "tlf numarası giriniz"
+    },
+    "city": "şehir",
+    "state": "Durum",
+    "countryCode": "Ülke kodu",
+    "postalCode": "Postal kod",
+    "phone": "tlf Numaraı",
+    "proceedToPayment": "Ödemeye Devam Ediniz"
+  },
+  "paymentScreen": {
+    "payment": {
+      "method": "Ödeme Şekli"
+    },
+    "select": {
+      "payment": {
+        "method": "Ödeme Şeklini Seçiniz"
+      }
+    },
+    "addNewCard": "Yeni Kart Ekleyiniz",
+    "cardNumbar": "Cart Numarası",
+    "expiration": {
+       "Month": "Son Kullanım Ayı",
+      "year": "son kullanım yılı"
+      },
+    "cvv": "cvv",
+    "addCard": "Cart ekle",
+    "proceedToPlaceOrder": "sipariş vermeye devam edin"
+   },
+  "placeOrderScreen": {
+    "shipping": "kargo",
+    "Payment": {
+      "method": "Ödeme Şekli"
+    },
+    "address": "Adres",
+    "method": "yöntem",
+    "order": {
+      "items": "şipariş edilen ürünler",
+      "summary": "Sipariş özeti"
+    },
+    "yourCardIsEmpty": "Kartınız Boş",
+    "items": "ürünler",
+    "tax": "vergi",
+    "total": "toplam",
+    "place": {
+      "order": "Sipariş ver"
+    }
+  }
+}

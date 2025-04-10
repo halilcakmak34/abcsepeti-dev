@@ -1,0 +1,442 @@
+{
+  "language": "Language",
+  "title": "Hello React",
+  "content": {
+    "textOne": "Welcome at our place.",
+    "textTwo": "Welcome at <1>our place</1>."
+  },
+  "home": {
+    "search": "Search",
+    "categories": "Categories",
+    "title": {
+      "latest": {
+        "products": "LatestXXXXX Products"
+      }
+    }
+  },
+  "cart": {
+    "title": {
+      "shopping": {
+        "cart": "Shopping Cart"
+      }
+    },
+    "your": {
+      "cart": {
+        "is": {
+          "empty": "Your Cart Is Empty"
+        }
+      }
+    },
+    "go": {
+      "back": "Go Back"
+    },
+    "add": {
+      "more": {
+        "book": "Add More Books"
+      }
+    },
+    "proceed": {
+      "to": {
+        "checkout": " Proceed To Checkout"
+      }
+    }
+  },
+  "header": {
+    "menu": "Menu",
+    "profile": "Profile",
+    "logout": "Logout",
+    "sign": {
+      "in": "Sign in"
+    },
+    "users": "Users",
+    "products": "Products",
+    "orders": "Orders",
+    "category": "Category"
+  },
+  "categoryCreate": {
+    "go": {
+      "back": "Go Back"
+    },
+    "create": {
+      "category": "Create Category"
+    },
+    "parent": {
+      "category": "Parent Category"
+    },
+    "select": {
+      "parent": {
+        "category": "Select Parent Category"
+      }
+    },
+
+    "description": "Description",
+    "enter": {
+      "name": "Enter Name",
+      "description": "Enter Description"
+    },
+    "name": "Name"
+  },
+  "categoryEdit": {
+    "edit": {
+      "category": "Edit Category"
+    },
+    "category": "Category",
+    "select": {
+      "category": "Select Category"
+    },
+    "name": "Name",
+    "enter": {
+      "name": "Enter Name",
+      "description": "Enter Description"
+    },
+    "description": "Description",
+    "update": "Update",
+    "go": {
+      "back": "Go Back"
+    }
+  },
+  "categoryList": {
+    "categories": "Categories",
+    "create": {
+      "category": "Create Category"
+    },
+    "id": "Id",
+    "parent": {
+      "id": "Parent Id"
+    },
+    "category": {
+      "name": "Category Name"
+    },
+    "description": "Description",
+    "actions": "Actions"
+  },
+  "usersList": {
+    "users": "Users",
+    "userName": "UserName",
+    "id": "Id",
+    "first": {
+      "name": "First Name"
+    },
+    "last": {
+      "name": "Last Name"
+    },
+    "email": "Email",
+    "roles": "Roles"
+  },
+  "userEdit": {
+    "go": {
+      "back": "Go Back"
+    },
+    "edit": {
+      "user": " Edit Users"
+    },
+    "first": {
+      "name": " First Name"
+    },
+    "last": {
+      "name": "Last Name"
+    },
+    "email": {
+      "address": "Email Address"
+    },
+    "update": "Update",
+    "enter": {
+      "first": {
+        "name": "Enter First Name"
+      },
+      "last": {
+        "name": " Enter Last Name"
+      },
+      "email": "Enter Email"
+    }
+  },
+  "productScreen": {
+    "select": "Select",
+    "poor": "poor",
+    "fair": "fair",
+    "good": "good",
+    "very": {
+      "good": "very good"
+    },
+    "excellent": "Excellent",
+    "price": "price",
+    "description": "description",
+    "status": "status",
+    "submit": "submit",
+    "qty": "qty",
+    "please": "please",
+    "reviews": "reviews",
+    "review": "yorum",
+    "go": {
+      "back": "Go Back"
+    },
+    "add": {
+      "to": {
+        "cart": "Add to Cart"
+      }
+    },
+    "write": {
+      "costumer": {
+        "review": "write a costumer review"
+      },
+      "review": "to write review"
+    },
+    "sign": {
+      "in": "sign in"
+    },
+    "no": {
+      "reviews": "no reviews "
+    }
+  },
+  "productCreate": {
+    "go": {
+      "back": "Go back"
+    },
+    "create": {
+      "product": "Create Product"
+    },
+    "name": "name",
+    "enter": {
+      "name": "enter name",
+      "price": "enter price",
+      "description": "enter description ",
+      "countInStock": "enter countInStock"
+    },
+    "price": "price",
+    "count": {
+      "in": {
+        "stock": "count In Stock"
+      }
+    },
+    "description": "description",
+    "product": {
+      "category": "product category"
+    },
+    "select": {
+      "product": {
+        "category": "select product category"
+      }
+    }
+  },
+  "productList": {
+    "products": "Ürünler",
+    "create": {
+      "product": "Ürün Oluştur"
+    },
+    "id": "Id",
+    "name": "Name",
+    "price": "Price",
+    "category": "Category",
+    "imageId": "İmageId",
+    "available": {
+      "item": {
+        "count": "Available İtem Count"
+      }
+    },
+    "actions": "Actions"
+  },
+  "productEdit": {
+    "go": {
+      "back": "Go Back"
+    },
+    "edit": {
+      "product": "edit product"
+    },
+    "name": "Name",
+    "price": "price",
+    "description": "description",
+    "enter":{
+      "name": "Enter Name",
+      "price": "Enter price",
+      "countInStock": "Enter CountInStock",
+      "description": "description"
+    },
+    "count": {
+      "in": {
+        "stock": "count in Stock"
+      }
+    }
+  },
+  "orderScreen": {
+    "order": "Order",
+    "shipping": "Shipping",
+    "name": "Name",
+    "email": "Email",
+    "address": "Address",
+    "method": "Method",
+    "tax": "Tax",
+    "total": "Total",
+    "not": {
+      "delivered": " not delivered",
+      "paid": "not paid"
+    },
+    "payment": {
+      "method": "Payment Method",
+      "receipt": "Payment Receipt"
+    },
+    "order":{
+      "item": "order item",
+      "is": {
+        "empty": "order is empty"
+      },
+      "summary": "Summary"
+    },
+    "mark": {
+      "as": {
+        "delivered": "mark as delivered"
+      }
+    }
+  },
+  "orderList": {
+    "orders": "Orders",
+    "id": "Id",
+    "date": "Date",
+    "total": "Total",
+    "paid": "Paid",
+    "delivered": "Delivered ",
+    "details": "Details"
+  },
+  "loginScreen": {
+    "password": "password",
+    "register": "Register",
+    "sign": {
+      "in": "sign in"
+    },
+    "email": {
+      "address": "Email address"
+    },
+    "username": {
+      "or": {
+        "email": "username or email "
+      }
+    },
+    "new": {
+      "costumer": "new costumer"
+    }
+  },
+  "profileScreen": {
+    "id": "Id",
+    "date": "Date",
+    "total": "total",
+    "paid": "paid",
+    "delivered": "delivered ",
+    "details": "details",
+    "profile": {
+      "user": "user profile",
+      "update": "update profile "
+    },
+    "first":{
+      "name": "first name"
+    },
+    "last": {
+      "name": "last name"
+    },
+    "email": {
+      "address": "email address"
+    },
+    "password": "password",
+    "update": "update",
+    "enter": {
+      "first": {
+        "name": "enter first name "
+      },
+      "last": {
+        "name": "enter last name"
+      },
+      "email": {
+        "address": "enter email address"
+      },
+      "password": "password"
+    },
+    "confirm": {
+      "password": "confirm password"
+    },
+    "myOrders": "my orders"
+
+
+  },
+  "registerScreen": {
+    "sign": {
+      "in": "sign in"
+    },
+    "username": "username",
+    "email": "email",
+    "first": {
+      "name": "first name"
+    },
+    "password": "password",
+    "confirm": {
+      "password": "confirm password"
+    },
+    "register": "register",
+    "haveAAccount": " Have A Account?",
+    "login": "login "
+  },
+  "shippingScreen": {
+    "address": "Adres",
+    "select": {
+      "billing": {
+        "address": "select billing address",
+        "countryCode": "select country code"
+      },
+      "shipping": {
+        "address": "select shipping address "
+      }
+    },
+    "addANewAddress": "Add New Address",
+    "addressLine1": "1.address",
+    "addressLine2": "2.address",
+    "enter": {
+      "addressLine1": "1.address Line",
+      "addressLine2": "2.address Line",
+      "city": "enter city",
+      "state": "enter state",
+      "postalCode": "enter postal code",
+      "phoneNumber": "enter phone numbar"
+    },
+    "city": "city",
+    "state": "state",
+    "countryCode": "country code",
+    "postalCode": "Postal code",
+    "phone": "phone numbar",
+    "proceedToPayment": "Proceed To Payment"
+  },
+  "paymentScreen": {
+    "payment": {
+      "method": "payment method"
+    },
+    "select": {
+      "payment": {
+        "method": "select payment method"
+      }
+    },
+    "addNewCard": "Add New Card ",
+    "cardNumbar": "card number",
+    "expiration": {
+      "Month": "Expiration Month",
+      "year": "Expiration Year"
+    },
+    "cvv": "cvv",
+    "addCard": "Add Card",
+    "proceedToPlaceOrder": "Proceed To PlaceOrder"
+  },
+  "placeOrderScreen": {
+    "shipping": "shipping",
+    "Payment": {
+      "method": "payment method"
+    },
+    "address": "Address",
+    "method": "method",
+    "order": {
+      "items": "order items",
+      "summary": "order summary"
+    },
+    "yourCardIsEmpty": "your card is empty",
+    "items": "items",
+    "tax": "tax",
+    "total": "total",
+    "place": {
+      "order": "place order"
+    }
+  }
+}

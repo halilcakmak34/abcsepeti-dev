@@ -1,0 +1,2 @@
+ARG SPRING_ADMIN_VERSION
+FROM codecentric/spring-boot-admin:${SPRING_ADMIN_VERSION}

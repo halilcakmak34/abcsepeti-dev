@@ -1,0 +1,146 @@
+version: '3.7'
+services:
+  admin:
+    build:
+      context: admin/
+      args:
+        SPRING_ADMIN_VERSION: ${SPRING_ADMIN_VERSION}
+    ports:
+      - "9761:8080"
+    networks:
+      - abc_network
+  zipkin:
+    build:
+      context: zipkin/
+      args:
+        SPRING_ZIPKIN_VERSION: ${SPRING_ZIPKIN_VERSION}
+    ports:
+      - "9411:9411"
+    networks:
+      - abc_network
+  nexus:
+    image: sonatype/nexus3
+    container_name: abc-nexus3
+    volumes:
+      - nexus-data:/nexus-data
+    networks:
+      - abc_network
+    ports:
+      - "8081:8081"
+  jenkins:
+    build:
+      context: jenkins/
+      dockerfile: Dockerfile
+    init: true
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - jenkins-docker-certs:/certs/client:ro
+    environment:
+      DOCKER_HOST: tcp://docker:2376
+      DOCKER_CERT_PATH: /certs/client
+      DOCKER_TLS_VERIFY: 1
+    networks:
+      - abc_network
+    ports:
+      - "8080:8080"
+      - "50001:50000"
+  sonarqube:
+    image: sonarqube
+    container_name: abc-sonarqube
+    networks:
+      - abc_network
+    ports:
+      - "9000:9000"
+  setup:
+    build:
+      context: setup/
+      args:
+        SETUP_VERSION: ${SETUP_VERSION}
+    init: true
+    volumes:
+      - setup:/state
+    environment:
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
+      LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
+      KIBANA_SYSTEM_PASSWORD: ${KIBANA_SYSTEM_PASSWORD:-}
+    networks:
+      - abc_network
+    depends_on:
+      - elasticsearch
+  elasticsearch:
+    build:
+      context: elasticsearch/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
+      discovery.type: single-node
+    networks:
+      - abc_network
+  logstash:
+    build:
+      context: logstash/
+      args:
+        LOGSTASH_VERSION: ${LOGSTASH_VERSION}
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+    ports:
+      - "5044:5044"
+      - "50000:50000/tcp"
+      - "50000:50000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: -Xms256m -Xmx256m
+      LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
+    networks:
+      - abc_network
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build:
+      context: kibana/
+      args:
+        KIBANA_VERSION: ${KIBANA_VERSION}
+    volumes:
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601"
+    environment:
+      KIBANA_SYSTEM_PASSWORD: ${KIBANA_SYSTEM_PASSWORD:-}
+    networks:
+      - abc_network
+    depends_on:
+      - elasticsearch
+  postgresql-db:
+    image: postgres:14.2-alpine
+    container_name: abc-postgresql
+    networks:
+      - abc_network
+    ports:
+      - "5555:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - /Users/admin-halil/Documents/DockerVolumes/DB/postgresql:/var/lib/postgresql/data
+
+networks:
+  abc_network:
+    driver: bridge
+
+volumes:
+  setup:
+  elasticsearch:
+  jenkins-data:
+  jenkins-docker-certs:
+  nexus-data:

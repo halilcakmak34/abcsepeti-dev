@@ -1,0 +1,445 @@
+{
+  "language": "Languach",
+  "title": "Hallo React",
+  "content": {
+    "textOne": "Willkommen bei uns.",
+    "textTwo": "Willkommen bei <1>uns</1>."
+  },
+  "home": {
+    "search": "XXXXX",
+    "categories": "Categories",
+    "title": {
+      "latest": {
+        "products": "Latest Productsss"
+      }
+    }
+  },
+  "cart": {
+    "title": {
+      "shopping": {
+        "cart": "Shoppchs Cartch"
+      }
+    },
+    "your": {
+      "cart": {
+        "is": {
+          "empty": "Yourc Cartch Isc Emptych"
+        }
+      }
+    },
+    "go": {
+      "back": "Goch Backch"
+    },
+    "add": {
+      "more": {
+        "book": "Addch Morech Bookch"
+      }
+    },
+    "proceed": {
+      "to": {
+        "checkout": " Proceedch Toch Checkoutch"
+      }
+    }
+  },
+  "header": {
+    "menu": "Menuch",
+    "profile": "Profilch",
+    "logout": "Logoutch",
+    "sign": {
+      "in": "Signch inch"
+    },
+    "users": "Userch",
+    "products": "Productch",
+    "orders": "Orderch",
+    "category": "Categorch"
+  },
+  "categoryCreate": {
+    "go": {
+      "back": "Goch Backch"
+    },
+    "create": {
+      "category": "Createch Categorych"
+    },
+    "parent": {
+      "category": "Parentch Categorych"
+    },
+    "select": {
+      "parent": {
+        "category": "Selectch Parentch Categorych"
+      }
+    },
+
+    "description": "descriptionch",
+    "enter": {
+      "description": "Enterch Descriptionch",
+      "name": "Enterch Namech"
+    },
+    "name": "namech"
+  },
+  "categoryEdit": {
+    "edit": {
+      "category": "Edicht Categchory"
+    },
+    "category": "Categorchy",
+    "select": {
+      "category": "Seleccht Categorchy"
+    },
+    "name": "Namche",
+    "enter": {
+      "name": "Enter Namche",
+      "description": "Enterch Description"
+    },
+    "description": "Descriptionch",
+    "update": "Updatech",
+    "go": {
+      "back": "Goch Backch"
+    }
+  },
+  "categoryList": {
+    "categories": "Categoriesch",
+    "create": {
+      "category": "Creatche Cachtegory"
+    },
+    "id": "Idch",
+    "parent": {
+      "id": "Parentch Id"
+    },
+    "category": {
+      "name": "Categorchy Nchame"
+    },
+    "description": "Descrchiption",
+    "actions": "Achctions"
+  },
+  "usersList": {
+    "users": "Usersch",
+    "userName": "UserchName",
+    "id": "Idch",
+    "first": {
+      "name": "First Nchame"
+    },
+    "last": {
+      "name": "Last Nchame"
+    },
+    "email": "Emaichl",
+    "roles": "Rolesch"
+  },
+  "userEdit": {
+    "go": {
+      "back": "Go chBack"
+    },
+    "edit": {
+      "user": " Edicht Users"
+    },
+    "first": {
+      "name": " Fichrst Name"
+    },
+    "last": {
+      "name": "Lachst Name"
+    },
+    "email": {
+      "address": "Emchail Address"
+    },
+    "update": "Updchate",
+    "enter": {
+      "first": {
+        "name": "Enter chFirst Name"
+      },
+      "last": {
+        "name": " Entechr Lascht Name"
+      },
+      "email": "Enterch Email"
+    }
+  },
+  "productScreen": {
+    "select": "Selecıut",
+    "poor": "pojıor",
+    "fair": "faijr",
+    "good": "goojuınd",
+    "very": {
+      "good": "vejnıry gjnıood"
+    },
+    "excellent": "Excenjıllent",
+    "price": "prjice",
+    "description": "dejscription",
+    "status": "stajtus",
+    "submit": "sujbmit",
+    "qty": "qjty",
+    "please": "pljease",
+    "reviews": "revjiews",
+    "review": "yorum",
+    "go": {
+      "back": "Goj Bakjck"
+    },
+    "add": {
+      "to": {
+        "cart": "Addj tjo Cjkart"
+      }
+    },
+    "write": {
+      "costumer": {
+        "review": "writjne a cjostumer revjniew"
+      },
+      "review": "to wrihute rejview"
+    },
+    "sign": {
+      "in": "signj inj"
+    },
+
+    "no": {
+      "reviews": "no revhjgiews "
+    }
+  },
+  "productCreate": {
+    "go": {
+      "back": "Gjıoo bacok"
+    },
+    "create": {
+      "product": "Crejatje Product"
+    },
+    "name": "naojme",
+    "enter": {
+      "name": "enjoter name",
+      "price": "entojer price",
+      "countInStock": "enoooooooter countInStock",
+      "description": "enter descrıooöiption "
+    },
+    "price": "poookorice",
+    "count": {
+      "in": {
+        "stock": "couoknt In Stock"
+      }
+    },
+    "description": "descrööiption",
+
+    "product": {
+      "category": "product categofdıudfry"
+    },
+    "select": {
+      "product": {
+        "category": "select proxcxvduct category"
+      }
+    }
+  },
+  "productList": {
+    "products": "Ürünler",
+    "create": {
+      "product": "Ürün Oluştur"
+    },
+    "id": "Idct",
+    "name": "Ncfame",
+    "price": "Prgjice",
+    "category": "Cgjjategory",
+    "imageId": "İmaghfgeId",
+    "available": {
+      "item": {
+        "count": "Availagşgble İtem Count"
+      }
+    },
+    "actions": "Action98yns"
+  },
+  "productEdit": {
+    "go": {
+      "back": "Goyg Back"
+    },
+    "edit": {
+      "product": "edggit product"
+    },
+    "name": "Namguue",
+    "price": "prgyuice",
+    "description": "desyuggcription",
+    "enter":{
+      "name": "Enter Nuyfgame",
+      "price": "Enter yguprice",
+      "countInStock": "Entyuger CountInStock",
+      "description": "descyguription"
+    },
+    "count": {
+      "in": {
+        "stock": "counhut inyug Stock"
+      }
+    }
+  }, "orderScreen": {
+  "order": "Oropder",
+  "shipping": "Shiopping",
+  "name": "Namoe",
+  "email": "oEmail",
+  "address": "Aoddress",
+  "method": "Meoothod",
+  "tax": "Taxo",
+  "total": "Tooktal",
+  "not": {
+    "delivered": " noot deolivered",
+    "paid": "notok paoid"
+  },
+  "payment": {
+    "method": "Paymenokt Mokethod",
+    "receipt": "Paymokent Rekoceipt"
+  },
+  "order":{
+    "item": "ordekor ioktem",
+    "is": {
+      "empty": "orkopder ikoks koempty"
+    },
+    "summary": "Summkmary"
+  },
+  "mark": {
+    "as": {
+      "delivered": "mark mkas delklivered"
+    }
+  }
+},
+  "orderList": {
+    "orders": "Ordershjjk",
+    "id": "Idu",
+    "date": "uıDate",
+    "total": "Totuıal",
+    "paid": "Puıaid",
+    "delivered": "Deuıylivered ",
+    "details": "Detuyails"
+  },
+  "loginScreen": {
+    "password": "pakssword",
+    "register": "Rekmgister",
+    "sign": {
+      "in": "sigkn kmin"
+    },
+    "email": {
+      "address": "Emmail amkddress"
+    },
+    "username": {
+      "or": {
+        "email": "usernkıame kor ekmail "
+      }
+    },
+    "new": {
+      "costumer": "neıkw coskıtumer"
+    }
+  },
+  "profileScreen": {
+    "id": "jnId",
+    "date": "Djnate",
+    "total": "tjotal",
+    "paid": "paijd",
+    "delivered": "deljivered ",
+    "details": "detaijkls",
+    "profile": {
+      "user": "usjuıer pjurofile",
+      "update": "updajıjıte pjırofile "
+    },
+    "first":{
+      "name": "firjıst njıame"
+    },
+    "last": {
+      "name": "lasjıt najıme"
+    },
+    "email": {
+      "address": "emaijıl addjıress"
+    },
+    "password": "paıjssword",
+    "update": "updatıue",
+    "enter": {
+      "first": {
+        "name": "enterıu fiıujrst nauıme "
+      },
+      "last": {
+        "name": "enteuır luıast nuıame"
+      },
+      "email": {
+        "address": "entıuer ıumail addrujıess"
+      },
+      "password": "passwıuurd"
+    },
+    "confirm": {
+      "password": "cjıonfirm passjıuword"
+    },
+    "myOrders": "myj ojrders"
+
+
+  },
+  "registerScreen": {
+    "sign": {
+      "in": "sigıkon iıkn"
+    },
+    "username": "useırname",
+    "email": "emıkail",
+    "first": {
+      "name": "firsıkot ıkname"
+    },
+    "password": "passıkword",
+    "confirm": {
+      "password": "confıkoirm paıkssword"
+    },
+    "register": "registekır",
+    "haveAAccount": " Hakıve A Akıccount?",
+    "login": "logikmın "
+  },
+  "shippingScreen": {
+    "address": "Addhres",
+    "select": {
+      "billing": {
+        "address": "selectdfok blokilling addloloress",
+        "countryCode": "select colllkuntry code"
+      },
+      "shipping": {
+        "address": "select shiplköping addlökress "
+      }
+    },
+    "addANewAddress": "Add Nlökew Addrlökess",
+    "addressLine1": "1.aölkddress",
+    "addressLine2": "2.adlödress",
+    "enter": {
+      "addressLine1": "1.addreöss Line",
+      "addressLine2": "2.addrlöess Line",
+      "city": "enter ciöty",
+      "state": "enter stalöte",
+      "postalCode": "enter polöstal code",
+      "phoneNumber": "enter phlöone numbar"
+    },
+    "city": "cilty",
+    "state": "statlöe",
+    "countryCode": "colöuntry code",
+    "postalCode": "Poslötal code",
+    "phone": "phone numlöbar",
+    "proceedToPayment": "Proclöeed To Palöyment"
+  },
+  "paymentScreen": {
+    "payment": {
+      "method": "paymenzft metdhod"
+    },
+    "select": {
+      "payment": {
+        "method": "selectxv paydvment method"
+      }
+    },
+    "addNewCard": "Add Nsvew Csvard ",
+    "cardNumbar": "card numsdgvber",
+    "expiration": {
+      "Month": "Expirafvstion Moxvxnth",
+      "year": "Expiratidfon Ydear"
+    },
+    "cvv": "cvvff",
+    "addCard": "Adddx Casfrd",
+    "proceedToPlaceOrder": "Prsdfoceed To PlscaceOrder"
+  },
+  "placeOrderScreen": {
+    "shipping": "shivdppifgng",
+    "Payment": {
+      "method": "paymefgnt mgfdkethod"
+    },
+    "address": "Adyhures",
+    "method": "methkkod",
+    "order": {
+      "items": "orkkder ikoptems",
+      "summary": "orkloder sumopkmary"
+    },
+    "yourCardIsEmpty": "yokour ckloard ikos elokmpty",
+    "items": "itemkos",
+    "tax": "takox",
+    "total": "tokotal",
+    "place": {
+      "order": "plokace ookrder"
+    }
+  }
+}
+
+

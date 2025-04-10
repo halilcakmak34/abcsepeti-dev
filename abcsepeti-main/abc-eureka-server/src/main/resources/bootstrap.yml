@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: abc-eureka-server
+
+management:
+  metrics:
+    export:
+      influx:
+        enabled: false #influx metrics not pushing

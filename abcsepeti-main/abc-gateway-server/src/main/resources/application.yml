@@ -1,0 +1,59 @@
+server:
+  port: ${SERVER_PORT:8765}
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:docker-postgresql}
+  zipkin:
+    base-url: ${ZIPKIN_FULL_URL:http://localhost:9411}
+    enabled: true
+    service:
+      name: abc-gateway-server
+    message-timeout: 10
+  sleuth:
+    sampler:
+      probability: 1.0
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+zuul:
+  sensitiveHeaders:
+  host:
+    socket-timeout-millis: 30000
+    connect-timeout-millis: 30000
+  prefix: /api
+  routes:
+    billing:
+      path: /billing/**
+      serviceId: abc-billing-service
+    catalog:
+      path: /catalog/**
+      serviceId: abc-catalog-service
+    account:
+      path: /account/**
+      serviceId: abc-account-service
+    order:
+      path: /order/**
+      serviceId: abc-order-service
+    payment:
+      path: /payment/**
+      serviceId: abc-payment-service
+  ribbon:
+    eager-load:
+      enabled: true
+  ribbon-isolation-strategy: THREAD
+
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 60000
+  eureka:
+    enabled: false
+
+  hystrix:
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 70000

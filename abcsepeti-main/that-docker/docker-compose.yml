@@ -1,0 +1,298 @@
+version: "3.4"
+
+services:
+
+  postgres:
+    container_name: abc_postgres_container
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /data/postgres
+      POSTGRES_DB: abcdev
+      PGHOST: abc-postgres-host
+    volumes:
+      - abc-postgresql-db-volume:/data/postgres
+    ports:
+      - "5555:5432"
+    networks:
+      - abc-app-network
+    restart: unless-stopped
+
+  test-postgres:
+    container_name: abc_postgres_container-test
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /data/postgres
+      POSTGRES_DB: abctest
+      PGHOST: abc-postgres-host
+    volumes:
+      - abc-postgresql-db-volume-test:/data/postgres
+    ports:
+      - "4444:5432"
+    networks:
+      - abc-app-network
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: abc_pgadmin_container
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-halilcakmak34@gmail.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - abc-pgadmin:/var/lib/pgadmin
+
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - abc-app-network
+    restart: unless-stopped
+
+  # MYSQL Database
+  abc-mysql-db:
+    image: mysql:5.7
+    container_name: abc-mysql-db
+    hostname: abc-mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'bookstore_db'
+      MYSQL_USER: 'bookstoreDBA'
+      MYSQL_PASSWORD: 'PaSSworD'
+      MYSQL_ROOT_PASSWORD: 'r00tPaSSworD'
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - abc-db-volume:/var/lib/mysql
+    networks:
+      - abc-app-network
+
+  # Core services
+  abc-consul-discovery:
+    hostname: abc-consul-discovery
+    image: consul:1.15.4
+    container_name: abc-consul-discovery
+    restart: always
+    ports:
+      - "8500:8500"
+    networks:
+      - abc-app-network
+
+  abc-zuul-gateway-server:
+    build:
+      context: ../abc-gateway-server
+      args:
+        JAR_FILE: abc-gateway-server-1.0.0.jar
+      dockerfile: ../abc-gateway-server/Dockerfile
+    image: abc-zuul-gateway-server
+    container_name: abc-zuul-gateway-server
+    hostname: abc-zuul-gateway-server
+    ports:
+      - "8765:8765"
+    networks:
+      - abc-app-network
+    environment:
+      - SERVER_PORT=8765
+      - ZIPKIN_HOST=abc-zipkin:9411
+      - SPRING_PROFILES_ACTIVE=docker-postgresql
+
+  abc-account-service:
+    build:
+      context: ../abc-account-service
+      args:
+        JAR_FILE: abc-account-service-1.0.0.jar
+      dockerfile: ../abc-account-service/Dockerfile
+    image: abc-account-service
+    container_name: abc-account-service
+    hostname: abc-account-service
+    ports:
+      - "4001:4001"
+    networks:
+      - abc-app-network
+    environment:
+      - SERVER_PORT=4001
+      - ZIPKIN_HOST=abc-zipkin:9411
+      - SPRING_PROFILES_ACTIVE=docker-postgresql
+
+  abc-billing-service:
+    build:
+      context: ../abc-billing-service
+      args:
+        JAR_FILE: abc-billing-service-1.0.0.jar
+      dockerfile: ../abc-billing-service/Dockerfile
+    image: abc-billing-service
+    container_name: abc-billing-service
+    hostname: abc-billing-service
+    ports:
+      - "5001:5001"
+    networks:
+      - abc-app-network
+    environment:
+      - SERVER_PORT=5001
+      - ZIPKIN_HOST=abc-zipkin:9411
+      - SPRING_PROFILES_ACTIVE=docker-postgresql
+
+  abc-catalog-service:
+    build:
+      context: ../abc-catalog-service
+      args:
+        JAR_FILE: abc-catalog-service-1.0.0.jar
+      dockerfile: ../abc-catalog-service/Dockerfile
+    image: abc-catalog-service
+    container_name: abc-catalog-service
+    hostname: abc-catalog-service
+    ports:
+      - "6001:6001"
+    networks:
+      - abc-app-network
+    environment:
+      - SERVER_PORT=6001
+      - ZIPKIN_HOST=abc-zipkin:9411
+      - SPRING_PROFILES_ACTIVE=docker-postgresql
+
+  abc-order-service:
+    build:
+      context: ../abc-order-service
+      args:
+        JAR_FILE: abc-order-service-1.0.0.jar
+      dockerfile: ../abc-order-service/Dockerfile
+    image: abc-order-service
+    container_name: abc-order-service
+    hostname: abc-order-service
+    ports:
+      - "7001:7001"
+    networks:
+      - abc-app-network
+    environment:
+      - SERVER_PORT=7001
+      - ZIPKIN_HOST=abc-zipkin:9411
+      - SPRING_PROFILES_ACTIVE=docker-postgresql
+
+  abc-payment-service:
+    build:
+      context: ../abc-payment-service
+      args:
+        JAR_FILE: abc-payment-service-1.0.0.jar
+      dockerfile: ../abc-payment-service/Dockerfile
+    image: abc-payment-service
+    container_name: abc-payment-service
+    hostname: abc-payment-service
+    ports:
+      - "8001:8001"
+    networks:
+      - abc-app-network
+    environment:
+      - SERVER_PORT=8001
+      - ZIPKIN_HOST=abc-zipkin:9411
+      - SPRING_PROFILES_ACTIVE=docker-postgresql
+
+  # Tracing service
+  abc-zipkin:
+    image: openzipkin/zipkin
+    container_name: abc-zipkin
+    hostname: abc-zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - abc-app-network
+
+  # Monitoring Services
+  abc-prometheus:
+    build:
+      context: ./abc-prometheus
+      dockerfile: ../abc-prometheus/Dockerfile
+    image: abc-prometheus
+    container_name: abc-prometheus
+    hostname: abc-prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - abc-app-network
+
+  abc-grafana:
+    build:
+      context: ./abc-graphana
+      dockerfile: ../abc-graphana/Dockerfile
+    image: graphana
+    container_name: abc-graphana
+    hostname: abc-graphana
+    ports:
+      - "3030:3000"
+    volumes:
+      - abc-graphana-volume:/var/lib/grafana
+    networks:
+      - abc-app-network
+
+  # Monitoring using TICK stack.
+  abc-telegraf:
+    build:
+      context: ./abc-telegraph
+      dockerfile:  ../abc-telegraph/Dockerfile
+    image: abc-telegraf
+    container_name: abc-telegraf
+    hostname: abc-telegraf
+    environment:
+      HOSTNAME: "abc-telegraf"
+    ports:
+      - "8125:8125/udp"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - abc-app-network
+
+  abc-influxdb:
+    image: influxdb
+    container_name: abc-influxdb
+    hostname: abc-influxdb
+    volumes:
+      - abc-influxdb-volume:/var/lib/influxdb
+    ports:
+      - "8086:8086"
+    networks:
+      - abc-app-network
+
+  abc-chronograf:
+    image: chronograf:1.7.3
+    container_name: abc-chronograf
+    hostname: abc-chronograf
+    environment:
+      INFLUXDB_URL: http://abc-influxdb:8086
+      KAPACITOR_URL: http://abc-kapacitor:9092
+    volumes:
+      - abc-chronograf-volume:/var/lib/chronograf
+    ports:
+      - "8888:8888"
+    restart: always
+    networks:
+      - abc-app-network
+
+  abc-kapacitor:
+    image: kapacitor
+    container_name: abc-kapacitor
+    hostname: abc-kapacitor
+    environment:
+      KAPACITOR_HOSTNAME: abc-kapacitor
+      KAPACITOR_INFLUXDB_0_URLS_0: http://abc-influxdb:8086
+    ports:
+      - "9092:9092"
+    networks:
+      - abc-app-network
+
+volumes:
+  abc-db-volume:
+  abc-postgresql-db-volume:
+  abc-postgresql-db-volume-test:
+  abc-pgadmin:
+  abc-graphana-volume:
+  abc-telegraph-volume:
+  abc-influxdb-volume:
+  abc-chronograf-volume:
+
+networks:
+  abc-app-network:
+    driver: bridge
